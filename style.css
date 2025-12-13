@@ -1,14 +1,26 @@
+html,
 body {
 	margin: 0;
+	height: 100%;
+	touch-action: none;
+	overscroll-behavior: none;
+}
+
+body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
-	background-color: #141414;
+	background: #111;
+}
+
+#game-wrapper {
+	width: 400px;
+	height: 600px;
+	overflow: hidden;
 }
 
 #gameCanvas {
-	background-color: #965af7;
+	background-color: #2c2c2c;
 	width: 400px;
 	height: 600px;
 }
