@@ -10,28 +10,26 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #000;
-}
-
-img {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	opacity: 0.6;
-	z-index: -1;
+	background-image: url('assets/images/star-background.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 1;
+	position: relative;
 }
 
 #game-wrapper {
 	width: 400px;
 	height: 600px;
 	overflow: hidden;
+	z-index: 1;
+	position: relative;
+	border: 8px solid #8400ff2a;
+	border-radius: 8px;
 }
 
 #gameCanvas {
-	background-color: #2c2c2c;
 	width: 400px;
 	height: 600px;
 }
