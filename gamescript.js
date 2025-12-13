@@ -2,6 +2,9 @@ let canvas, ctx;
 let canvas_width = 400;
 let canvas_height = 600;
 
+const bg = new Image();
+bg.src = "assets/images/background.png";
+
 let player_x = 100;
 let player_y = 280;
 let player_width = 34;
@@ -10,10 +13,10 @@ let velocity = 0;
 let gravity = 950;
 
 let pipes = [];
-const pipe_width = 70;
-const pipe_gap = 140;
+const pipe_width = 80;
+const pipe_gap = 200;
 const pipe_speed = 180;
-const pipe_interval = 1.6;
+const pipe_interval = 1.8;
 let pipeTimer = 0;
 
 let player = {
@@ -145,10 +148,12 @@ function update(delta) {
 
 
 function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawplayer();
+    ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+
+    drawPlayer();
     drawPipes();
     drawScore();
+
     if (gameState === GameState.GAME_OVER) {
         drawGameOver();
         drawPlayButton();
@@ -160,7 +165,7 @@ function draw() {
 }
 
 
-function drawplayer() {
+function drawPlayer() {
     ctx.fillStyle = "white";
     ctx.fillRect(player.x, player.y, player.width, player.height);
 }
